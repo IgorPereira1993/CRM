@@ -115,7 +115,7 @@ export const VersionList: React.FC = () => {
                     </span>
                   )}
                 </div>
-                <p className="text-xs text-gray-500 mt-1.5 truncate">{ver.observations || 'Sem observações'}</p>
+                <p className="text-xs text-gray-500 mt-2 md:mt-1.5 truncate">{ver.observations || 'Sem observações'}</p>
               </div>
 
               {/* Meta */}
