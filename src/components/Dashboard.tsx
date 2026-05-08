@@ -91,7 +91,7 @@ export const Dashboard: React.FC = () => {
                     setActiveTab('overview');
                     setCurrentView('version');
                   }}
-                  className="w-full flex items-center gap-3 p-3 rounded-lg hover:bg-white/5 border border-transparent hover:border-[#1e2d4d] transition-all text-left group"
+                  className="w-full flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 p-3 rounded-lg hover:bg-white/5 border border-transparent hover:border-[#1e2d4d] transition-all text-left group"
                 >
                   {sys && colors && (
                     <div className={`p-2 rounded-lg ${colors.bg} border ${colors.border} shrink-0`}>
@@ -99,15 +99,15 @@ export const Dashboard: React.FC = () => {
                     </div>
                   )}
                   <div className="flex-1 min-w-0">
-                    <div className="flex items-center gap-2">
+                    <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2">
                       <span className="text-sm font-medium text-gray-200 truncate">{sys?.name}</span>
-                      <span className={`text-xs px-1.5 py-0.5 rounded font-mono ${colors?.badge}`}>v{ver.version}</span>
+                      <span className={`text-xs px-1.5 py-0.5 rounded font-mono ${colors?.badge} inline-block whitespace-nowrap`}>v{ver.version}</span>
                     </div>
-                    <p className="text-xs text-gray-500 mt-0.5 truncate">{ver.observations || 'Sem observações'}</p>
+                    <p className="text-xs text-gray-500 mt-2 sm:mt-0.5 truncate">{ver.observations || 'Sem observações'}</p>
                   </div>
-                  <div className="flex flex-col items-end gap-1 shrink-0">
-                    <span className={`text-xs px-2 py-0.5 rounded-full border ${statusInfo.color}`}>{statusInfo.label}</span>
-                    <span className="text-xs text-gray-600">{formatDate(ver.date)}</span>
+                  <div className="flex flex-col items-start sm:items-end gap-1 shrink-0">
+                    <span className={`text-xs px-2 py-0.5 rounded-full border ${statusInfo.color} whitespace-nowrap`}>{statusInfo.label}</span>
+                    <span className="text-xs text-gray-600 whitespace-nowrap">{formatDate(ver.date)}</span>
                   </div>
                 </button>
               );
