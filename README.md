@@ -1,6 +1,6 @@
-# Sistema de Gerenciamento de Projetos Delphi
+# Sistema de Gerenciamento de Projetos
 
-Interface web moderna para gerenciamento de sistemas Delphi, versões, mudanças de banco de dados, arquivos e tarefas.
+Interface web moderna para gerenciamento de sistemas, versões, mudanças de banco de dados, arquivos e tarefas.
 
 ## 🚀 Funcionalidades
 
