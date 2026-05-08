@@ -94,8 +94,8 @@ export const Dashboard: React.FC = () => {
                   className="w-full flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 p-3 rounded-lg hover:bg-white/5 border border-transparent hover:border-[#1e2d4d] transition-all text-left group"
                 >
                   {sys && colors && (
-                    <div className={`p-2 rounded-lg ${colors.bg} border ${colors.border} shrink-0`}>
-                      <SystemIconComponent icon={sys.icon} size={14} className={colors.text} />
+                    <div className={`flex items-center justify-center w-11 h-11 rounded-lg ${colors.bg} border ${colors.border} shrink-0`}>
+                      <SystemIconComponent icon={sys.icon} size={16} className={colors.text} />
                     </div>
                   )}
                   <div className="flex-1 min-w-0">

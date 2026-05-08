@@ -45,7 +45,7 @@ export const VersionList: React.FC = () => {
       </button>
 
       {/* System Header */}
-      <div className={`flex items-start justify-between mb-6 p-5 rounded-xl ${colors.bg} border ${colors.border}`}>
+      <div className={`flex flex-col sm:flex-row sm:items-start sm:justify-between mb-6 p-5 rounded-xl ${colors.bg} border ${colors.border}`}>
         <div className="flex items-center gap-4">
           <div className={`p-3 rounded-xl bg-[#0d1117]/50 border ${colors.border}`}>
             <SystemIconComponent icon={system.icon} size={26} className={colors.text} />
@@ -53,7 +53,7 @@ export const VersionList: React.FC = () => {
           <div>
             <h1 className="text-xl font-bold text-white">{system.name}</h1>
             <p className="text-sm text-gray-400 mt-0.5">{system.description}</p>
-            <div className="flex items-center gap-3 mt-2">
+            <div className="flex flex-wrap items-center gap-3 mt-2">
               <span className="text-xs text-gray-500">{system.language}</span>
               <span className="text-gray-700">•</span>
               <span className="text-xs text-gray-500">{system.database}</span>
@@ -62,7 +62,7 @@ export const VersionList: React.FC = () => {
             </div>
           </div>
         </div>
-        <div className="flex items-center gap-2">
+        <div className="flex items-center gap-2 mt-4 sm:mt-0">
           <Button variant="primary" size="sm" onClick={() => setShowForm(true)}>
             <Plus size={14} />
             Nova Versão
@@ -87,7 +87,7 @@ export const VersionList: React.FC = () => {
           return (
             <div
               key={ver.id}
-              className="group flex items-center gap-4 p-4 bg-[#0d1117] rounded-xl border border-[#1e2d4d] hover:border-[#2d3f5e] hover:bg-[#111827] transition-all duration-200 cursor-pointer"
+              className="group flex flex-col sm:flex-row sm:items-center gap-4 p-4 bg-[#0d1117] rounded-xl border border-[#1e2d4d] hover:border-[#2d3f5e] hover:bg-[#111827] transition-all duration-200 cursor-pointer"
               onClick={() => handleSelectVersion(ver.id)}
             >
               {/* Version badge */}
@@ -98,7 +98,7 @@ export const VersionList: React.FC = () => {
               </div>
 
               {/* Info */}
-              <div className="flex-1 min-w-0">
+              <div className="flex-1 min-w-0 space-y-2">
                 <div className="flex flex-col md:flex-row md:items-center gap-2 md:flex-wrap">
                   <span className={`inline-block text-xs px-2 py-0.5 rounded-full border ${statusInfo.color} whitespace-nowrap`}>
                     {statusInfo.label}
@@ -115,12 +115,12 @@ export const VersionList: React.FC = () => {
                     </span>
                   )}
                 </div>
-                <p className="text-xs text-gray-500 mt-1.5 truncate">{ver.observations || 'Sem observações'}</p>
+                <p className="text-xs text-gray-500 truncate max-w-full">{ver.observations || 'Sem observações'}</p>
               </div>
 
               {/* Meta */}
-              <div className="shrink-0 text-right">
-                <div className="flex items-center gap-1.5 text-xs text-gray-600 justify-end">
+              <div className="shrink-0 text-left sm:text-right">
+                <div className="flex items-center gap-1.5 text-xs text-gray-600 justify-start sm:justify-end">
                   <Clock size={11} />
                   {formatDate(ver.date)}
                 </div>
