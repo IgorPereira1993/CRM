@@ -167,18 +167,22 @@ export const Dashboard: React.FC = () => {
                   onClick={() => { setActiveSystem(sys.id); setCurrentView('system'); }}
                   className="w-full text-left"
                 >
-                  <div className="flex items-center gap-3 mb-1">
-                    <div className={`p-1.5 rounded-lg ${colors.bg} border ${colors.border}`}>
-                      <SystemIconComponent icon={sys.icon} size={13} className={colors.text} />
+                  <div className="flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-3 mb-2">
+                    <div className="flex items-center gap-3 min-w-0">
+                      <div className={`p-1.5 rounded-lg ${colors.bg} border ${colors.border} shrink-0`}>
+                        <SystemIconComponent icon={sys.icon} size={13} className={colors.text} />
+                      </div>
+                      <span className="text-sm text-gray-300 truncate">{sys.name}</span>
                     </div>
-                    <span className="text-sm text-gray-300 flex-1">{sys.name}</span>
-                    <span className={`text-xs font-bold ${colors.text}`}>{sys.versionCount} versões</span>
+                    <span className={`text-xs font-bold ${colors.text} whitespace-nowrap`}>{sys.versionCount} versões</span>
                   </div>
-                  <div className="w-full bg-[#1e2d4d] rounded-full h-1.5 ml-8">
-                    <div
-                      className={`h-1.5 rounded-full ${colors.text.replace('text-', 'bg-').replace('-400', '-500')}`}
-                      style={{ width: `${pct}%` }}
-                    />
+                  <div className="overflow-hidden">
+                    <div className="w-full bg-[#1e2d4d] rounded-full h-1.5 sm:ml-8">
+                      <div
+                        className={`h-1.5 rounded-full ${colors.text.replace('text-', 'bg-').replace('-400', '-500')}`}
+                        style={{ width: `${pct}%` }}
+                      />
+                    </div>
                   </div>
                 </button>
               );

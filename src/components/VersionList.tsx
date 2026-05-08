@@ -99,18 +99,18 @@ export const VersionList: React.FC = () => {
 
               {/* Info */}
               <div className="flex-1 min-w-0">
-                <div className="flex items-center gap-2 flex-wrap">
-                  <span className={`text-xs px-2 py-0.5 rounded-full border ${statusInfo.color}`}>
+                <div className="flex flex-col md:flex-row md:items-center gap-2 md:flex-wrap">
+                  <span className={`inline-block text-xs px-2 py-0.5 rounded-full border ${statusInfo.color} whitespace-nowrap`}>
                     {statusInfo.label}
                   </span>
                   {ver.checklist.length > 0 && (
-                    <span className="text-xs text-gray-600 flex items-center gap-1">
+                    <span className="text-xs text-gray-600 flex items-center gap-1 whitespace-nowrap">
                       <CheckCircle size={11} />
                       {doneChecklist}/{ver.checklist.length} checklist
                     </span>
                   )}
                   {verTasks.length > 0 && (
-                    <span className="text-xs text-gray-600">
+                    <span className="text-xs text-gray-600 whitespace-nowrap">
                       {doneTasks}/{verTasks.length} tarefas
                     </span>
                   )}
