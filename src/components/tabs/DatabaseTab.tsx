@@ -16,6 +16,7 @@ interface DatabaseTabProps {
 const emptyForm = (versionId: string): Omit<DBChange, 'id' | 'createdAt'> => ({
   versionId,
   type: 'table',
+  tableName: '',
   name: '',
   description: '',
   sql: '',
@@ -134,7 +135,11 @@ export const DatabaseTab: React.FC<DatabaseTabProps> = ({ versionId }) => {
                 </span>
 
                 {/* Name */}
-                <span className="font-mono text-sm font-medium text-gray-200 flex-1 truncate">{change.name}</span>
+                <span className="font-mono text-sm font-medium text-gray-200 flex-1 truncate">
+                  {change.tableName && <span className="text-gray-400">{change.tableName}</span>}
+                  {change.tableName && change.name && <span className="text-gray-500 mx-1">→</span>}
+                  {change.name}
+                </span>
 
                 {/* Executed */}
                 {change.executed ? (
@@ -164,6 +169,12 @@ export const DatabaseTab: React.FC<DatabaseTabProps> = ({ versionId }) => {
 
               {isExpanded && (
                 <div className="border-t border-[#1e2d4d] p-4 space-y-3 bg-[#080c14]">
+                  {change.tableName && (
+                    <div>
+                      <p className="text-xs text-gray-600 mb-1">Nome da Tabela</p>
+                      <p className="font-mono text-sm text-gray-300">{change.tableName}</p>
+                    </div>
+                  )}
                   {change.description && (
                     <div>
                       <p className="text-xs text-gray-600 mb-1">Descrição</p>
@@ -213,7 +224,10 @@ export const DatabaseTab: React.FC<DatabaseTabProps> = ({ versionId }) => {
                 <option key={k} value={k}>{v.icon} {v.label}</option>
               ))}
             </Select>
-            <Input label="Nome *" value={form.name} onChange={e => set('name', e.target.value)} placeholder="Ex: TABELA_CLIENTE" required />
+            {form.type === 'field' && (
+              <Input label="Nome da Tabela *" value={form.tableName || ''} onChange={e => set('tableName', e.target.value)} placeholder="Ex: TABELA_CLIENTE" required />
+            )}
+            <Input label={form.type === 'field' ? 'Nome do Campo *' : 'Nome *'} value={form.name} onChange={e => set('name', e.target.value)} placeholder={form.type === 'field' ? 'Ex: id_cliente' : 'Ex: TABELA_CLIENTE'} required />
             <div className="col-span-2">
               <Input label="Descrição" value={form.description} onChange={e => set('description', e.target.value)} placeholder="Descreva o que faz esta alteração..." />
             </div>

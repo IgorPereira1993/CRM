@@ -67,6 +67,7 @@ export interface DBChange {
   id: string;
   versionId: string;
   type: DBChangeType;
+  tableName?: string;
   name: string;
   description: string;
   sql: string;
