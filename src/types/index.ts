@@ -36,6 +36,7 @@ export interface DelphiSystem {
   description: string;
   color: SystemColor;
   icon: SystemIcon;
+  customIcon?: string; // base64 ou URL da imagem
   language: string;
   database: string;
   defaultPath: string;

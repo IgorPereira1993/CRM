@@ -56,7 +56,7 @@ export const generateUpdateReport = (
   responsible: string,
   updateSteps: string,
   checklist: { text: string; done: boolean }[],
-  dbChanges: { type: string; name: string; description: string; sql: string }[],
+  dbChanges: { type: string; tableName?: string; name: string; description: string; sql: string }[],
   files: { type: string; name: string; version: string; destinationPath: string; required: boolean }[],
   tasks: { title: string; category: string; priority: string; description: string }[]
 ): string => {
@@ -83,7 +83,7 @@ export const generateUpdateReport = (
     `ALTERAÇÕES NO BANCO DE DADOS`,
     `========================================`,
     ...dbChanges.map(d => [
-      `[${d.type.toUpperCase()}] ${d.name}`,
+      d.tableName ? `${d.tableName} → ${d.name}` : `${d.name}`,
       `Descrição: ${d.description}`,
       `SQL:`,
       d.sql,

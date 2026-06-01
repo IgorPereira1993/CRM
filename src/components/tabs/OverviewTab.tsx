@@ -42,7 +42,7 @@ export const OverviewTab: React.FC<OverviewTabProps> = ({ versionId }) => {
       ver.responsible,
       ver.updateSteps,
       ver.checklist,
-      vDBChanges.map(d => ({ type: d.type, name: d.name, description: d.description, sql: d.sql })),
+      vDBChanges.map(d => ({ type: d.type, tableName: d.tableName, name: d.name, description: d.description, sql: d.sql })),
       vFiles.map(f => ({ type: f.type, name: f.name, version: f.version, destinationPath: f.destinationPath, required: f.required })),
       vTasks.map(t => ({ title: t.title, category: t.category, priority: t.priority, description: t.description }))
     );
