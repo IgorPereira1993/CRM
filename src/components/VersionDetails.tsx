@@ -8,6 +8,7 @@ import { DatabaseTab } from './tabs/DatabaseTab';
 import { FilesTab } from './tabs/FilesTab';
 import { HistoryTab } from './tabs/HistoryTab';
 import { TasksTab } from './tabs/TasksTab';
+import { DocumentationTab } from './tabs/DocumentationTab';
 
 export const VersionDetails: React.FC = () => {
   const { systems, versions, activeSystemId, activeVersionId, activeTab, setCurrentView, setActiveTab } = useStore();
@@ -25,6 +26,7 @@ export const VersionDetails: React.FC = () => {
     { id: 'files', label: 'Arquivos', icon: Folder, component: FilesTab },
     { id: 'history', label: 'Histórico', icon: Clock, component: HistoryTab },
     { id: 'tasks', label: 'Tarefas', icon: CheckSquare, component: TasksTab },
+    { id: 'documentation', label: 'Documentação', icon: FileText, component: DocumentationTab },
   ];
 
   const currentTabComponent = tabs.find(t => t.id === activeTab)?.component;

@@ -53,6 +53,7 @@ export interface Version {
   status: VersionStatus;
   observations: string;
   updateSteps: string;
+  documentation?: string;
   checklist: ChecklistItem[];
   createdAt: string;
   updatedAt: string;

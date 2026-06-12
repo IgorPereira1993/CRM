@@ -20,6 +20,7 @@ const defaultData = (systemId: string): Omit<Version, 'id' | 'createdAt' | 'upda
   status: 'development',
   observations: '',
   updateSteps: '',
+  documentation: '',
   checklist: [],
 });
 
@@ -87,6 +88,15 @@ export const VersionForm: React.FC<VersionFormProps> = ({ isOpen, onClose, onSub
               onChange={e => set('updateSteps', e.target.value)}
               rows={4}
               placeholder="1. Fazer backup do banco&#10;2. Executar scripts SQL&#10;3. Copiar DLLs&#10;4. Substituir EXE&#10;5. Testar sistema"
+            />
+          </div>
+          <div className="col-span-2">
+            <Textarea
+              label="Documentação da Versão"
+              value={form.documentation ?? ''}
+              onChange={e => set('documentation', e.target.value)}
+              rows={4}
+              placeholder="Escreva a documentação desta versão aqui..."
             />
           </div>
         </div>
