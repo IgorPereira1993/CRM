@@ -32,7 +32,7 @@ Interface web moderna para gerenciamento de sistemas, versões, mudanças de ban
 ### 1. Clone o repositório
 ```bash
 git clone <url-do-repositorio>
-cd delphi-project-management-system
+cd project-management-system
 ```
 
 ### 2. Instale as dependências
@@ -91,7 +91,7 @@ src/
 
 ### Tabelas Principais
 
-- **systems**: Sistemas Delphi cadastrados
+- **systems**: Sistemas cadastrados
 - **versions**: Versões de cada sistema
 - **db_changes**: Scripts SQL de mudanças
 - **files**: Arquivos das versões (DLLs, EXEs)
@@ -113,7 +113,7 @@ systems (1) ──── (N) notes
 ## 🎯 Como Usar
 
 1. **Dashboard**: Visão geral com estatísticas
-2. **Sistemas**: Gerencie seus sistemas Delphi
+2. **Sistemas**: Gerencie seus sistemas
 3. **Versões**: Controle releases e implantações
 4. **Abas da Versão**:
    - **Visão Geral**: Checklist e status
