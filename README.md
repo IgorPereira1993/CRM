@@ -5,7 +5,7 @@ Interface web moderna para gerenciamento de sistemas, versões, mudanças de ban
 ## 🚀 Funcionalidades
 
 - **Dashboard** com visão geral dos sistemas
-- **Gerenciamento de Sistemas** Delphi
+- **Gerenciamento de Sistemas**
 - **Controle de Versões** com checklist e status
 - **Alterações de Banco de Dados** (SQL scripts)
 - **Gerenciamento de Arquivos** (DLLs, EXEs, etc.)
